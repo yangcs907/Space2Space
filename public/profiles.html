@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Space2Space</title>
+<!--links-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+      .card {
+        margin-right: 50px;
+        margin-left: 50px;
+        margin-top: 10px;
+      }
+
+      #card-div {
+        margin: 10%;
+        margin-top: 10px;
+      }
+    </style>
+
+</head>
+<body>
+	<!--Nav Bar-->
+<nav class="navbar navbar-light" style="background-color: #9be694;">
+  <a class="navbar-brand" href="/"><img src="assets/images/Space2Space-logo.png" style=" width:196.56px; height: 52px"></a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+ <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sign-up">Create a Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/my-profile">My Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profiles">Available RoomMates<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/resources">Resources</a>
+      </li>
+      </ul>
+</nav>
+<h3 style="text-align: center;">Your Matches</h3>
+<!--Profile Cards-->
+<div id="card-div">
+  <div class="card-deck">
+    <div class="card" id="card1" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title" id="name1"></h5>
+				<h2 id="type1"></h2>
+        <p class="card-text" id="intro1"></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="language1"></li>
+        <li class="list-group-item" id="country1"></li>
+        <li class="list-group-item" id="religion1"></li>
+      </ul>
+      <div class="card-body" id="button1">
+      </div>
+    </div>
+		<div class="card" id="card2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title" id="name2"></h5>
+				<h2 id="type2"></h2>
+        <p class="card-text" id="intro2"></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="language2"></li>
+        <li class="list-group-item" id="country2"></li>
+        <li class="list-group-item" id="religion2"></li>
+      </ul>
+      <div class="card-body" id="button2">
+      </div>
+    </div>
+		<div class="card" id="card3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title" id="name3"></h5>
+				<h2 id="type3"></h2>
+        <p class="card-text" id="intro3"></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="language3"></li>
+        <li class="list-group-item" id="country3"></li>
+        <li class="list-group-item" id="religion3"></li>
+      </ul>
+      <div class="card-body" id="button3">
+      </div>
+    </div>
+		<div class="card" id="card4" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title" id="name4"></h5>
+				<h2 id="type4"></h2>
+        <p class="card-text" id="intro4"></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="language4"></li>
+        <li class="list-group-item" id="country4"></li>
+        <li class="list-group-item" id="religion4"></li>
+      </ul>
+      <div class="card-body" id="button4">
+      </div>
+    </div>
+		<div class="card" id="card5" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title" id="name5"></h5>
+				<h2 id="type5"></h2>
+        <p class="card-text" id="intro5"></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="language5"></li>
+        <li class="list-group-item" id="country5"></li>
+        <li class="list-group-item" id="religion5"></li>
+      </ul>
+      <div class="card-body" id="button5">
+      </div>
+    </div>
+		<div class="card" id="card6" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title" id="name6"></h5>
+				<h2 id="type6"></h2>
+        <p class="card-text" id="intro6"></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="language6"></li>
+        <li class="list-group-item" id="country6"></li>
+        <li class="list-group-item" id="religion6"></li>
+      </ul>
+      <div class="card-body" id="button6">
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript" src="js/matches.js"></script>
+</body>
+</html>

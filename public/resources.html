@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>Space2Space|Resources</title>
+	<!--Links-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATMNF9yo0a6M5kzGKsTbeIrk_YIrM_Wv0&libraries=places"></script>
+</head>
+<body>
+	<style type="text/css">
+		.card-main{
+			position: relative;
+			width: 90%;
+			margin: auto;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		.card-header{
+			/*font-size: 30px;*/
+		}
+		form{
+			position: relative;
+			float: right;
+		}
+		.row{
+			margin-top: 20px;
+		}
+
+		.card{
+			width:90%;
+			position: relative;
+			margin: auto;
+			margin-top: 70px
+		}
+		.container{
+			text-align: center;
+		}
+		.lead{
+			font-size: 25px;
+		}
+
+
+       #map {
+        height: 800px;
+        width: 75%;
+        position: relative;
+        margin:auto;
+        margin-top: 10px;
+        }
+	</style>
+	<!--Nav Bar-->
+<nav class="navbar navbar-light" style="background-color: #9be694;">
+  <a class="navbar-brand" href="/"><img src="assets/images/Space2Space-logo.png" style=" width:196.56px; height: 52px"></a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+       <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sign-up">Create a Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/my-profile"> My Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profiles">Available RoomMates</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="/resources">Resources<span class="sr-only">(current)</span></a>
+      </li>
+      </ul>
+  </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Your Resource Page</h1>
+    <p class="lead">Search for food, experiences, shopping and more!</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>
+  <div id="map"></div>
+</div>
+
+
+
+    <script>
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 48.864716, lng: 2.349014},
+          zoom: 6
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('You Are Here.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATMNF9yo0a6M5kzGKsTbeIrk_YIrM_Wv0&callback=initMap">
+    </script>
+
+<!--Card to Hold Experiences-->
+<!--<div class="card-main text-center">
+  <div class="card-header">
+    Experiences
+  </div>
+  <div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Georgia Aquarium</h5>
+        <img src="assets/images/georgia_aquarium.jpg" class="rounded mx-auto d-block img-thumbnail" alt="..." height="450" width="450">
+
+        <a href="https://www.georgiaaquarium.org/" class="btn btn-primary">Georgia Aquarium</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">SkyView Atlanta Ferris Wheel</h5>
+        <img src="assets/images/skyview.png" class="rounded mx-auto d-block img-thumbnail" alt="..." height="400" width="400">
+        <a href="http://www.skyviewatlanta.com/" class="btn btn-primary">SkyView</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">High Museum of Art</h5>
+        <img src="assets/images/hmoa.jpg" class="rounded mx-auto d-block img-thumbnail" alt="..." height="450" width="450">
+        <a href="https://www.high.org/" class="btn btn-primary">High Museum</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Fox Theater</h5>
+        <img src="assets/images/fox.jpg" class="rounded mx-auto d-block img-thumbnail" alt="..." height="350" width="350">
+        <a href="https://www.foxtheatre.org/" class="btn btn-primary">Fox Theater</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Bodies: The Exhibition</h5>
+        <img src="assets/images/bodies.gif" class="rounded mx-auto d-block img-thumbnail" alt="..." height="400" width="400">
+        <a href="http://www.premierexhibitions.com/exhibitions/4/4/bodies-exhibition" class="btn btn-primary">Body Exhibit</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">World of Coca-Cola</h5>
+        <img src="assets/images/woc.jpg" class="rounded mx-auto d-block img-thumbnail" alt="..." height="500" width="500">
+        <a href="http://www.worldofcoca-cola.com/" class="btn btn-primary">World of Coca-Cola</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>-->
+
+<!--Card to hold Restaurants-->
+<!--<div class="card-main text-center">
+  <div class="card-header">
+    Restaurants
+  </div>
+  <div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Ruth's Chris Steakhouse</h5>
+        <img src="assets/images/rc.png" class="rounded mx-auto d-block img-thumbnail" alt="..." height="500" width="500">
+        <a href="https://www.ruthschris.com/" class="btn btn-primary">Ruth's Chris</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Houston's</h5>
+        <img src="assets/images/houstons.jpg" class="rounded mx-auto d-block img-thumbnail" alt="..." height="400" width="400">
+        <a href="http://houstons.com/" class="btn btn-primary">Houston's</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Maggiano's</h5>
+        <img src="assets/images/magianos.jpg" class="rounded mx-auto d-block img-thumbnail" alt="..." height="300" width="300">
+        <a href="https://www.maggianos.com/" class="btn btn-primary">Maggiano's</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Legal Seafood</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Benihana</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Tin Lizzy's</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>-->
+
+
+
+
+
+</body>
+</html>

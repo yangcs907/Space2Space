@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Space2Space|Profile Managment</title>
+<!--links-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+      .card {
+        margin-right: 0px;
+        margin-left: 50px;
+        margin-top: 10px;
+        float:left;
+      }
+
+      #card-div {
+        width: 250px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 0px;
+        float:left;
+      }
+
+      .profile-management {
+        float:right;
+        width:65%;
+        margin-top: 10px;
+        margin-right: 5%;
+      }
+
+      .card-deck {
+        flex-flow: none;
+      }
+
+      .user-profile-card {
+        float:left;
+        width: 60%;
+        margin: 25px;
+        border: 2px;
+      }
+
+    </style>
+
+</head>
+<body>
+	<!--Nav Bar-->
+<nav class="navbar navbar-light" style="background-color: #9be694;">
+  <a class="navbar-brand" href="/"><img src="assets/images/Space2Space-logo.png" style=" width:196.56px; height: 52px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sign-up">Create a Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/my-profile">Profile Management<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profiles">Available RoomMates</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/resources">Resources</a>
+      </li>
+      </ul>
+
+</nav>
+<!--Profile Cards-->
+<div class="card" style="width: 18rem;">
+  <p id="notification" style="text-align: center"><b> NOTIFICATIONS</b> </p>
+  <img class="card-img-top" src="assets/images/profile-images/pexels-photo-428341.jpeg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Guest Name</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" id="name">Name: Vlad Vadim</li>
+    <li class="list-group-item" id="school">School: Georgia Tech</li>
+    <li class="list-group-item" id="country">Country: Russia</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">ACCEPT</a>
+    <a href="#" class="card-link">REJECT</a>
+  </div>
+</div>
+<!--Input fields-->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sign-up">Create a Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">My Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profiles">Available RoomMates</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/resources">Resources</a>
+      </li>
+      </ul>
+  </div>
+</nav>
+
+<div class="user-profile-card">
+  <h5 class="card-header">Profile Management</h5>
+  <div class="card-body">
+    <form>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Type of User</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Host</option>
+      <option>Applicant</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">First Name</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Last Name</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+  </div>
+  <form>
+  <div class="form-group">
+    <label for="addLink">Add Link to Profile Picture</label>
+    <textarea class="form-control" id="addLink" rows="1"></textarea>
+  </div>
+</form>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Birthdate (YYYY/MM/DD)</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="gender">Gender</label>
+    <select class="form-control" id="gender">
+      <option selected>Choose...</option>
+      <option>Female</option>
+      <option>Male</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Country of Origin </label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="school">School (Optional) </label>
+    <textarea class="form-control" id="firstName" rows="1"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Religion (optional)</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option selected>Choose...</option>
+      <option>Christianity</option>
+      <option>Islam</option>
+      <option>Judaism</option>
+      <option>Hinduism </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Laguages Spoken</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option selected>Choose...</option>
+      <option>English</option>
+      <option>Spanish</option>
+      <option>French</option>
+      <option>Arabic</option>
+    </select>
+  </div>
+
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Length of Stay</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option selected>Choose...</option>
+      <option>6 months</option>
+      <option>12 months</option>
+      <option>18 months</option>
+      <option>24 months</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Introduction</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</form>
+    <a href="#" class="btn btn-primary">Edit Profile</a>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
